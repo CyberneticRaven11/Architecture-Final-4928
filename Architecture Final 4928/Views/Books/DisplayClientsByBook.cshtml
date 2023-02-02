@@ -1,0 +1,25 @@
+﻿@model Architecture_Final_4928.Models.Book
+
+@{
+    ViewBag.Title = "DisplayClientsByBook";
+}
+
+<h2>DisplayClientsByBook</h2>
+
+
+@foreach (var item in Model.Clients)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}

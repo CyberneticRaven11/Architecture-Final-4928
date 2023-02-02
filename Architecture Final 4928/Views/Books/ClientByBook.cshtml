@@ -1,0 +1,19 @@
+﻿@model Architecture_Final_4928.Models.Loaned
+@{ ViewBag.Title = "Loan Book"; }
+
+<h2>Loan @Model.Books.Name to</h2>
+
+@using (Html.BeginForm("ClientByBook", "Books"))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.SelectedClientId, new SelectList(Model.Clients, "id", "Name"), new { @class = "form-control" })
+        @Html.HiddenFor(m => m.Books.Id)
+    </div>
+    <div class="form-group">
+
+        <button type="submit">Loan to a client</button>
+    </div>
+}
+
+
+
